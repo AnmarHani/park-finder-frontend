@@ -1,13 +1,287 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --background: linear-gradient(125.68deg, #080227 25.13%, #020005 41.75%, #0C0218 74.96%);
+  --primary: linear-gradient(168.85deg, #825DEB 5.84%, #0F5385 121.41%);
+  --border-color: linear-gradient(128.71deg, #6A00F4 18.13%, #380080 39.02%, #020005 78.77%);
+  --button-color: linear-gradient(101.48deg, #EA1484 24.49%, #C71CC7 83.06%);
+  --green:#29F29B;
+  --red:#EA143B;
+  --font:'Maven Pro', sans-serif;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* --------------- General styles ------------------- */
+body{
+  font-family: var(--font);
+  background: var(--background);
+  color:white;
+}
+.btn{
+  position: relative;
+  background: var(--background);
+  align-self: center;
+  padding-left: 73px;
+  padding-right: 73px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  text-decoration: none;
+  border-radius: 28px;
+}
+.btn:after{
+  content: '';
+  width: 105%;
+  height: 115%;
+  background: var(--button-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 28px;
+}
+.btn:hover{
+  top:-5px;
+  background: var(--button-color);
+  cursor: pointer;
+}
+.input-container{
+  display: flex;
+  margin: auto;
+  max-width: 50%;
+  position: relative;
+  background: var(--background);
+  align-self: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  border-radius: 28px;
+}
+.input-container input{
+  width: 100%;
+  box-sizing: border-box; 
+  font-size: 2rem; 
+}
+.input-container img{
+  padding-left:15px;
+  padding-right:15px;
+}
+.input-container:after{
+  content: '';
+  width: 101%;
+  height: 110%;
+  background: var(--border-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 28px;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+}
+
+button{
+  background:none;
+  color: white;
+  padding:0;
+  border: none;
+}
+
+input{
+  font-family: var(--font);
+  background: none;
+  border: none;
+  color: white;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+/* --------------- Nav ------------------- */
+nav{
+  padding: 20px;
+}
+
+/* --------------- Home ------------------- */
+.home-container{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:40px;
+  padding-top:0;
+  overflow: hidden;
+}
+.left-text h1{
+  font-weight:var(--bold);
+}
+.left-text h4{
+  font-weight:var(--regular);
+  opacity: 0.6;
+}
+.home-left{
+  display:flex;
+  flex-direction: column;
+}
+.btn-left{
+  margin-top: 20%;
+}
+
+/* --------------- Account(Login/Register) Pages ------------------- */
+.form-container{
+  display: flex;
+  padding: 40px;
+  justify-content: space-around;
+  align-items: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.form input{
+  margin-bottom: 40px;
+  padding: 20px;
+  border: white 3px solid;
+  border-radius: 34px;
+}
+.form .title{
+  font-weight: var(--bold);
+}
+.form .description{
+  font-weight: var(--regular);
+  margin-bottom: 50px;
+}
+.form button{
+  padding-right: 150px;
+  padding-left: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.form button:after{
+  width: 103%;
+  height: 113%;
+}
+.form .provider-check-container{
+  display: flex;
+}
+/* --------------- Customer Home Page ------------------- */
+.input-container{
+  margin-top:3%;
+}
+
+.results-container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top:50px;
+}
+
+.results-container .btn{
+  width:50%;
+  padding: 0;
+}
+.results-container .btn:after{
+  width: 102%;
+  height: 112%;
+}
+
+.result{
+  display: flex;
+  margin-bottom: 3%;
+}
+.result img{
+  padding-right:25px ;
+  padding-left:15px ;
+}
+/* --------------- Parking Slots Page ------------------- */
+.slots-container{
+  display: flex;
+  margin: auto;
+  max-width:80%;
+  margin-top: 5%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.slots-container .btn:after{
+  width: 109%;
+  height: 111%;
+}
+.slot{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  padding-top:40px;
+  padding-bottom:40px;
+  width: 10%;
+  align-items: center;
+}
+.slot .top{
+  position: relative;
+  top:-47px;
+  background:var(--green);
+  width: 100%;
+  text-align: center;
+  border-radius: 21px 21px 0 0;
+  box-shadow: inset 0px 11.8535px 11.8535px rgba(0, 0, 0, 0.25);
+  padding: 4px;
+}
+
+
+/* provider home */
+.provider-home-container{
+  position: relative;
+  max-width:100%;
+  margin: auto;
+  text-align: center;
+  margin-top:13%;
+}
+.provider-home-container h1{
+  margin-bottom:50px;
+}
+.provider-home-container .btn{
+  margin:15px;
+}
+
+
+.places-container{
+  text-align: center;
+}
+
+/* border: 10px solid;
+border-radius: 28;
+border-image-slice: 1;
+border-width: 5px;
+border-image-source: var(--button-color);
+
+padding-top:23px;
+padding-bottom:23px;
+padding-right:63px;
+padding-left:63px;
+
+align-self: center; */
+
+@media only screen and (max-width: 1110px) {
+  .slot{
+    width: calc(100vw/5);
+    margin: auto;
+  }
+  .slots-container .btn:after{
+    width: 107%;
+    height: 109%;
+  }
+  .result{
+    margin-bottom: calc(100vw/15);
+  }
+  .results-container .btn:after{
+    width: 103%;
+    height: 107%;
+  }
+  img{
+    display: none;
+  }
+  nav img{
+    display: inline-block;
+  }
 }
